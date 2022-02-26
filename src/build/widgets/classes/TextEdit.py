@@ -158,22 +158,3 @@ class rgb_hex(Style):
             fg_selection=Rgb().th1(),
             align_horizontal=Align().h_center()
     )
-
-
-##################
-##     DEMO     ##
-##################
-class Demo_th(Style):
-    def __init__(self, *wgs):
-        super().__init__(
-            *wgs,
-            height=Dim().h5(),
-    )
-class Demo_tr(Style):
-    def __init__(self, *wgs):
-        super().__init__(
-            *wgs,
-            height=Dim().h5(),
-
-            bg=Rgb().tr(),
-    )

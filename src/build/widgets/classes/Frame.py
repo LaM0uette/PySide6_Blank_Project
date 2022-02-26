@@ -143,20 +143,3 @@ class palette_rgb(Style):
             bg=rgb,
             radius=((40, )*4),
     )
-
-
-##################
-##     DEMO     ##
-##################
-class Demo_hover(Style):
-    def __init__(self, *wgs):
-        super().__init__(
-            *wgs,
-            bg=Rgb().tr(),
-            border=((StyleBase().bd(),) * 4),
-            border_rgb=Rgb().bn1(),
-            border_hover=((StyleBase().bd(),) * 4),
-            border_hover_style="dashed",
-            border_hover_rgb=Rgb().bn1(),
-            radius = ((VBase.RADIUS+1, )*4)
-    )

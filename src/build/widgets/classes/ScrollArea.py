@@ -119,14 +119,3 @@ class Base_tr(Style):
             *wgs,
             bg=Rgb().tr()
         )
-
-
-##################
-##     DEMO     ##
-##################
-class Demo(Style):
-    def __init__(self, *wgs):
-        super().__init__(
-            *wgs,
-            bg=Rgb().th1(),
-    )
