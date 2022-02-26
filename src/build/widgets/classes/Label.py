@@ -21,6 +21,10 @@ class Style:
             fg=VBase.FG,
             fg_hover=VBase.FG_HOVER,
 
+            # Positions WG
+            margin=((0, )*4),
+            padding=((0, )*4),
+
             # Bordures
             border=VBase.WG_BORDER_WIDTH,
             border_style=VBase.WG_BORDER_STYLE,
@@ -39,6 +43,14 @@ class Style:
                 .QLabel {{
                 background-color: rgba{bg};
                 color: rgba{fg};
+                margin-top: {margin[0]}px;
+                margin-bottom: {margin[1]}px;
+                margin-right: {margin[2]}px;
+                margin-left: {margin[3]}px;
+                padding-top: {padding[0]}px;
+                padding-bottom: {padding[1]}px;
+                padding-right: {padding[2]}px;
+                padding-left: {padding[3]}px;
                 }}
                 .QLabel:hover {{
                 background-color: rgba{bg_hover};

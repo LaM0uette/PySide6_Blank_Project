@@ -33,6 +33,7 @@ class main(main_ui.Ui_main, QtWidgets.QWidget):
     def IN_BASE(self):
         # Fenetre
         self.setWindowTitle(config.nom)
+        self.setWindowIcon(QtGui.QPixmap(ICO_MAIN))
         self.setWindowOpacity(config.opacity)
         self._resize()
     def IN_CLASSE(self):
