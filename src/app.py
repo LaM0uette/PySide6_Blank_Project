@@ -37,130 +37,72 @@ class main(main_ui.Ui_main, QtWidgets.QWidget):
         self._resize()
     def IN_CLASSE(self):
         ### QCheckBox ###
-        CheckBox.Base_th(self.ck_demo_th_1, self.ck_demo_th_2, self.ck_demo_th_3)
-        CheckBox.Base_tr(self.ck_demo_tr_1, self.ck_demo_tr_2, self.ck_demo_tr_3)
         ### /QCheckBox ###
 
 
         ### QComboBox ###
-        ComboBox.Base_th(self.cb_demo_th)
-        ComboBox.Base_tr(self.cb_demo_tr)
         ### /QComboBox ###
 
 
         ### QDateEdit ###
-        DateEdit.Base_th(self.de_demo_th)
-        DateEdit.Base_tr(self.de_demo_tr)
         ### /QDateEdit ###
 
 
         ### QFrame ###
-        Frame.Base_th(self.fr_demo_th, self.fr_tb_demo_th_1, self.fr_tb_demo_th_2)
-        Frame.Base_tr(self.fr_tb_demo_tr_1, self.fr_tb_demo_tr_2)
         Frame.Base_th(self.fr_body)
-        Frame.Cadre(
-            self.fr_cb, self.fr_de, self.fr_lw, self.fr_pb, self.fr_ck,
-            self.fr_rb, self.fr_pg, self.fr_sb, self.fr_tw, self.fr_le,
-            self.fr_te, self.fr_pte, self.fr_tb, self.fr_trw, self.fr_sd,
-            self.fr_demo_cadre, self.fr_fr, self.fr_lb
-        ).bn1()
         Frame.Menu_bottom(self.fr_menu_bottom)
-        Frame.Demo_hover(self.fr_demo_cadre_hover)
         ### /QFrame ###
 
 
         ### QLabel ###
         Label.Base_tr(self.lb_mb_version)
-        Label.Demo_th(self.lb_lb_demo_th)
-        Label.Demo_tr(self.lb_lb_demo_tr)
-        Label.DemoCat(
-            self.lb_cb_demo, self.lb_de_demo, self.lb_lw_demo, self.lb_pb_demo, self.lb_ck_demo,
-            self.lb_rb_demo, self.lb_pg_demo, self.lb_sb_demo, self.lb_tw_demo, self.lb_le_demo,
-            self.lb_te_demo, self.lb_pte_demo, self.lb_tb_demo, self.lb_trw_demo, self.lb_sd_demo,
-            self.lb_fr_demo, self.lb_lb_demo
-        )
         ### /QLabel ###
 
 
         ### QListWidget ###
-        ListWidget.Demo_th(self.lv_demo_th, self.lw_demo_th)
-        ListWidget.Demo_tr(self.lv_demo_tr, self.lw_demo_tr)
         ### /QListWidget ###
 
 
         ### QProgressBar ###
-        ProgressBar.Demo_th(self.pg_demo_th)
-        ProgressBar.Demo_tr(self.pg_demo_tr)
         ### /QProgressBar ###
 
 
         ### QPushButton ###
-        PushButton.Base_th(self.pb_demo_th, self.pb_demo_ck)
-        PushButton.Base_tr(self.pb_demo_tr)
-
         PushButton.menu_top(self.pb_mt_option).option()
         PushButton.menu_top(self.pb_mt_reduire).reduire()
         PushButton.menu_top(self.pb_mt_agrandir).agrandir()
-
-        PushButton.txt(self.pb_demo_txt)
-        PushButton.txt_inv(self.pb_demo_txt_inv)
-
-        PushButton.Demo_bd(self.pb_demo_rd)
-        PushButton.Demo_rd(self.pb_demo_bd)
-
-        PushButton.ck_ico(self.pb_demo_ck_ico, self.pb_demo_ico_ck)
-        PushButton.zoom(self.pb_demo_zoom)
         ### /QPushButton ###
 
 
         ### QRadioButton ###
-        RadioButton.Base_th(self.rb_demo_th_1, self.rb_demo_th_2, self.rb_demo_th_3)
-        RadioButton.Base_tr(self.rb_demo_tr_1, self.rb_demo_tr_2, self.rb_demo_tr_3)
         ### /QRadioButton ###
 
 
         ### QScrollBoxArea ###
-        ScrollArea.Demo(self.sca_main)
         ### /QScrollBoxArea ###
 
 
         ### QSlider ###
-        Slider.Base_rond(self.hsd_demo)
-        Slider.Base_rond(self.vsd_demo)
         ### /QSlider ###
 
 
         ### QSpinBox ###
-        SpinBox.Plus_moins_th(self.sb_demo)
-        SpinBox.Plus_moins_tr(self.sb_demo_3)
-        SpinBox.Up_down_th(self.sb_demo_2)
-        SpinBox.Up_down_tr(self.dsb_demo)
         ### /QSpinBox ###
 
 
         ### QTableWidget ###
-        TableWidget.Demo_th(self.tv_demo_th, self.tw_demo_th)
-        TableWidget.Demo_tr(self.tv_demo_tr, self.tw_demo_tr)
         ### /QTableWidget ###
 
 
         ### QText ###
-        TextEdit.Base_th(self.le_demo_th)
-        TextEdit.Base_tr(self.le_demo_tr)
-        TextEdit.Demo_th(self.te_demo_th, self.pte_demo_th)
-        TextEdit.Demo_tr(self.te_demo_tr, self.pte_demo_tr)
         ### /QText ###
 
 
         ### QToolBox ###
-        ToolBox.Demo_th(self.tb_demo_th)
-        ToolBox.Demo_tr(self.tb_demo_tr)
         ### /QToolBox ###
 
 
         ### QTreeWidget ###
-        TreeWidget.Base_th(self.trv_demo_th, self.trw_demo_th)
-        TreeWidget.Base_tr(self.trv_demo_tr, self.trw_demo_tr)
         ### /QTreeWidget ###
 
         # Lancement des fonctions de MEF global
@@ -192,29 +134,6 @@ class main(main_ui.Ui_main, QtWidgets.QWidget):
                                         f"height: {Dim().h10()}px;"
                                         "}")
             self.hlay_menu_bottom.addWidget(self.sizegrip)
-
-
-        # Demo lw
-        model = QtGui.QStandardItemModel(60, 1)
-        for i in range(60):
-            self.lw_demo_th.addItem(f"je suis l'item : {i}")
-            self.lw_demo_tr.addItem(f"je suis l'item : {i}")
-            model.setItem(i, 0, QtGui.QStandardItem(f"je suis l'item : {i}"))
-        self.lv_demo_th.setModel(model)
-        self.lv_demo_tr.setModel(model)
-
-        # Demo tv
-        model = QtGui.QStandardItemModel(20, 100)
-        for ic in range(100):
-            for ir in range(20):
-                model.setItem(ir, ic, QtGui.QStandardItem(f"item:{ic+ir}"))
-        self.tv_demo_th.setModel(model)
-        self.tv_demo_tr.setModel(model)
-
-        model = QtWidgets.QFileSystemModel()
-        model.setRootPath('')
-        self.trv_demo_th.setModel(model)
-        self.trv_demo_tr.setModel(model)
     def IN_CONNECTIONS(self):
         ## Menu_top
         self.pb_mt_option.clicked.connect(lambda: DLG_Option(fen=fen).MAIN())
