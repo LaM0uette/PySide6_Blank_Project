@@ -1,0 +1,9 @@
+.idea /
+__pycache__/
+
+/src/logs
+/src/gui/logs
+/src/gui/Dlg/logs
+/src/assets/img/divers/tm
+/src/assets/img/main/tm
+/src/assets/img/ui/tm

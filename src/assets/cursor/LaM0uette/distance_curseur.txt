@@ -1,0 +1,5 @@
+souris: 7, 1
+crayon: 4, 29
+croix, flecheDirection, IBeam, NON: 16, 16
+fleche top: 16, 3
+main: 14, 8
