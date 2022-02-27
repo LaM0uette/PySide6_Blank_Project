@@ -6,4 +6,5 @@ from .SpinButton import SpinButton
 from .Font import Font
 from .Rgb import Rgb
 from .Scroll import Scroll
+from .SelectionBehavior import SelectionBehavior
 from .StyleBase import StyleBase

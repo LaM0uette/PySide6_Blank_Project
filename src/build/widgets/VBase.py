@@ -149,6 +149,7 @@ TEXT_VISIBLE = True
 VAL_MIN = 0
 VAL_MAX = 100
 VAL_STEP = 1
+SELECTION_BEHAVIOR = SelectionBehavior().row()
 WORD_WRAP = True
 
 

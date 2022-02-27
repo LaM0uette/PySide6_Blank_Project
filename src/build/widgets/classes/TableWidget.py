@@ -16,6 +16,7 @@ class Style:
             scroll_v=VBase.SCROLL_V,
             header_h=VBase.HEADER_H,
             header_v=VBase.HEADER_V,
+            selection_behavior=VBase.SELECTION_BEHAVIOR,
             curseur=Cur().croix(),
 
             # Couleurs BG
@@ -252,6 +253,8 @@ class Style:
             wg.setVerticalScrollBarPolicy(scroll_v)
             wg.horizontalHeader().setVisible(header_h)
             wg.verticalHeader().setVisible(header_v)
+
+            wg.setSelectionBehavior(selection_behavior)
 
             wg.setCursor(Fct(cur=curseur).CUR())
             wg.viewport().setCursor(Fct(cur=curseur).CUR())
