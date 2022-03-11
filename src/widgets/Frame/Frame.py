@@ -147,20 +147,3 @@ class ToolBox(Build):
             border_hover_rgb=Rgb().th3(),
             radius=(vb_wg.RADIUS, )*4
     )
-
-
-##################
-##     DEMO     ##
-##################
-class Demo_hover(Build):
-    def __init__(self, *wgs):
-        super().__init__(
-            *wgs,
-            bg=Rgb().tr(),
-            border=(StyleBase().border(),) * 4,
-            border_rgb=Rgb().bn1(),
-            border_hover=(StyleBase().border(),) * 4,
-            border_hover_style="dashed",
-            border_hover_rgb=Rgb().bn1(),
-            radius=(vb_wg.RADIUS_SIZE, )*4
-    )

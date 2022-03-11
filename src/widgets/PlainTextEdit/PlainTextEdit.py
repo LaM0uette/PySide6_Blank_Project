@@ -21,27 +21,3 @@ class Base:
             bg=Rgb().tr(),
             fg=Rgb().th3()
         )
-
-
-##################
-##     DEMO     ##
-##################
-class Demo:
-    def __init__(self, *wgs):
-        self.wgs = wgs
-
-    def th(self):
-        Build(
-            *self.wgs,
-
-            height=Dim().h5()
-        )
-    def tr(self):
-        Build(
-            *self.wgs,
-
-            height=Dim().h5(),
-
-            bg=Rgb().tr(),
-            fg=Rgb().th3()
-        )
