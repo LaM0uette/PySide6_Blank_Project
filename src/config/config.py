@@ -1,27 +1,27 @@
-import configparser
+import json
+import os
 
-from . import vrb
 
+### FICHIER CONFIG ###
+with open(f"{os.path.dirname(__file__)}\config.json", "r", encoding="utf-8") as fichier:
+    cfg = json.load(fichier)
 
-### FICHIER CONFIG ______________
-cfg = configparser.ConfigParser()
-cfg.read(vrb.INI_CONFIG, encoding="utf-8")
+### infos ###
+nom = cfg["nom"]
+description = cfg["description"]
+version = cfg["version"]
+auteur = cfg["auteur"]
 
-### infos _______________
-nom = cfg["infos"]["nom"]
-description = cfg["infos"]["description"]
-version = float(cfg["infos"]["version"])
-auteur = cfg["infos"]["auteur"]
-
-### config ________________________
+### config ###
 theme = cfg["config"]["theme"]
 font = cfg["config"]["font"]
-widht = int(cfg["config"]["widht"])
-height = int(cfg["config"]["height"])
-opacity = float(cfg["config"]["opacity"])
+widht = cfg["config"]["widht"]
+height = cfg["config"]["height"]
+opacity = cfg["config"]["opacity"]
 cur = cfg["config"]["cur"]
 
-### var _____________________
-auto_reload = cfg["var"]["autoreload"].lower() == "true"
-auto_close = cfg["var"]["autoClose"].lower() == "true"
-resize = cfg["var"]["resize"].lower() == "true"
+### var ###
+debug = cfg["var"]["debug"]
+resize = cfg["var"]["resize"]
+auto_close = cfg["var"]["auto_close"]
+toolbox_pin = cfg["var"]["toolbox_pin"]

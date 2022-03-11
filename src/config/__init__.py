@@ -1,2 +1,1 @@
-from . import config
-from . import vrb
+from src.config import config

@@ -1,0 +1,20 @@
+{
+    "nom": "PySide6_Blank_Project",
+    "description": "MyApp est une sorte d'application Modèle qui a pour but de faciliter la création de multiples applications facilement et rapidement en customisant les différents Widgets de manière simple et efficace.",
+    "version": 0.1,
+    "auteur": "LaM0uette",
+    "config": {
+        "theme": "columbia_blue",
+        "font": "Berlin Sans FB Demi",
+        "widht": 1200,
+        "height": 800,
+        "opacity": 0.96,
+        "cur": "MyApp"
+    },
+    "var": {
+        "debug": true,
+        "resize": true,
+        "auto_close": true,
+        "toolbox_pin": true
+    }
+}
