@@ -216,6 +216,11 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
     ##     ACTIONS     ##
     #####################
     def _a_reload_ui(self):
+        PushButton.plein(self.pb_opt_tm_th1).th1()
+        PushButton.plein(self.pb_opt_tm_th2).th2()
+        PushButton.plein(self.pb_opt_tm_th3).th3()
+        PushButton.plein(self.pb_opt_tm_bn1).bn1()
+        PushButton.plein(self.pb_opt_tm_bn2).bn2()
         # QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
         #
         # Functions().GEN_SVG()
