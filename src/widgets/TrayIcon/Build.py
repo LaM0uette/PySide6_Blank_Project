@@ -1,5 +1,6 @@
+from src.config import Config
 from src.build.mods import Functions
-from src.widgets import vb_wg
+from src.lib.palettes import *
 
 
 class Build:
@@ -8,51 +9,51 @@ class Build:
             *wgs,
 
             # Dimensions
-            width=vb_wg.WIDTH,
-            height=vb_wg.HEIGHT,
+            width=None,
+            height=PaDim.H9,
             height_separator=5,
 
             # Police
-            font=vb_wg.FONT,
-            font_size=vb_wg.FONT_SIZE,
+            font=Config.font,
+            font_size=PaFont.H4,
 
             # Paramètres
-            focus_policy=vb_wg.FOCUS_POLICY,
+            focus_policy=PaFocusPolicy.STRONG,
 
             # Curseur
-            cursor=vb_wg.CUR_VIEW,
+            cursor=PaCur.SOURIS_MAIN,
 
             # Couleurs BG
-            bg=vb_wg.BG,
-            bg_item=vb_wg.BG_ITEM,
-            bg_item_checked=vb_wg.BG_ITEM_CHECKED,
+            bg=PaRgb.TH3,
+            bg_item=PaRgb.TH3,
+            bg_item_checked=PaRgb.TH1,
             # Couleurs BG autres
-            bg_separator=vb_wg.BG_SEPARATOR,
+            bg_separator=PaRgb.BN1,
             # Couleurs FG
-            fg=vb_wg.FG,
-            fg_item=vb_wg.FG_ITEM,
-            fg_item_checked=vb_wg.FG_ITEM_CHECKED,
+            fg=PaRgb.TH1,
+            fg_item=PaRgb.TH1,
+            fg_item_checked=PaRgb.TH3,
 
             # Positions WG
             margin=(0,) * 4,
             padding=(0,) * 4,
 
             # Bordures
-            border=vb_wg.BORDER_WIDTH,
-            border_style=vb_wg.BORDER_STYLE,
-            border_rgb=vb_wg.BORDER_RGB,
+            border=(0,) * 4,
+            border_style="solid",
+            border_rgb=PaRgb.TR,
             # Bordures item
-            border_item=vb_wg.BORDER_WIDTH,
-            border_item_style=vb_wg.BORDER_STYLE,
-            border_item_rgb=vb_wg.BORDER_RGB,
+            border_item=(0,) * 4,
+            border_item_style="solid",
+            border_item_rgb=PaRgb.TR,
             # Bordures item checked
-            border_item_checked=vb_wg.BORDER_WIDTH,
-            border_item_checked_style=vb_wg.BORDER_STYLE,
-            border_item_checked_rgb=vb_wg.BORDER_RGB,
+            border_item_checked=(0,) * 4,
+            border_item_checked_style="solid",
+            border_item_checked_rgb=PaRgb.TR,
 
             # Rayons
-            radius=vb_wg.RADIUS,
-            radius_item=vb_wg.RADIUS,
+            radius=(3,) * 4,
+            radius_item=(3,) * 4,
     ):
         """
         *Border_Style: str() : dashed | dot-dash | dot-dot-dash | dotted | double | groove | inset | outset | ridge | solid | none \n
