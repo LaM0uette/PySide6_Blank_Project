@@ -1,4 +1,3 @@
-from src.widgets.ProgressBar import ProgressBar
 from src.widgets.Slider import Slider
 from src.widgets.TextEdit import TextEdit
 from src.widgets.TrayIcon import TrayIcon
