@@ -76,83 +76,54 @@ class main(Ui_main, QtWidgets.QWidget):
         MyPushButton.MenuTop(self.pb_mt_reduire).reduire()
         MyPushButton.MenuTop(self.pb_mt_agrandir).agrandir()
         MyPushButton.MenuTop(self.pb_mt_quitter).quitter()
-
-        MyPushButton.Base(self.pb_demo_th).Base()
-        MyPushButton.Base(self.pb_demo_tr).Transparent()
-
-        MyPushButton.Txt(self.pb_demo_txt).txt()
-        MyPushButton.Txt(self.pb_demo_txt_inv).inverse()
         ### /QPushButton  ###
 
 
         ###  QToolButton  ###
-        MyToolButton.Base(self.tb_demo_th).Base()
-        MyToolButton.Base(self.tb_demo_tr).Transparent()
         ### /QToolButton  ###
 
 
         ###  QRadioButton  ###
-        for wg in [self.rb_demo_th_1, self.rb_demo_th_2, self.rb_demo_th_3]: MyRadioButton.Demo(wg).Base()
-        for wg in [self.rb_demo_tr_1, self.rb_demo_tr_2, self.rb_demo_tr_3]: MyRadioButton.Demo(wg).Transparent()
         ### /QRadioButton  ###
 
 
         ###  QCheckBox  ###
-        for wg in [self.ck_demo_th_1, self.ck_demo_th_2, self.ck_demo_th_3]: MyCheckBox.Demo(wg).Base()
-        for wg in [self.ck_demo_tr_1, self.ck_demo_tr_2, self.ck_demo_tr_3]: MyCheckBox.Demo(wg).Transparent()
         ### /QCheckBox  ###
 
 
         ###  QCommandLinkButton  ###
-        MyCommandLinkButton.Base(self.clb_demo_th).Base()
-        MyCommandLinkButton.Base(self.clb_demo_tr).Transparent()
         ### /QCommandLinkButton  ###
 
 
         # ### QListView ###
-        MyListView.Demo(self.lv_demo_th).Base()
-        MyListView.Demo(self.lv_demo_tr).Transparent()
         # ### /QListView ###
 
 
         ### QTreeView ###
-        MyTreeView.Demo(self.trv_demo_th).Base()
-        MyTreeView.Demo(self.trv_demo_tr).Transparent()
         ### /QTreeView ###
 
 
         ### QTableView ###
-        MyTableView.Demo(self.tv_demo_th).Base()
-        MyTableView.Demo(self.tv_demo_tr).Transparent()
         ### /QTableView ###
 
 
         # ### QListWidget ###
-        MyListWidget.Demo(self.lw_demo_th).Base()
-        MyListWidget.Demo(self.lw_demo_tr).Transparent()
         # ### /QListWidget ###
 
 
         ### QTreeWidget ###
-        MyTreeWidget.Demo(self.trw_demo_th).Base()
-        MyTreeWidget.Demo(self.trw_demo_tr).Transparent()
         ### /QTreeWidget ###
 
 
         ### QTableWidget ###
-        MyTableWidget.Demo(self.tw_demo_th).Base()
-        MyTableWidget.Demo(self.tw_demo_tr).Transparent()
         ### /QTableWidget ###
 
 
         # ### QScrollBoxArea ###
-        MyScrollArea.Base(self.sca_main).Main()
         # ### /QScrollBoxArea ###
 
 
         ### QToolBox ###
-        MyToolBox.Demo(self.tbx_demo_th).Base()
-        MyToolBox.Demo(self.tbx_demo_tr).Transparent()
         ### /QToolBox ###
 
 
@@ -161,77 +132,46 @@ class main(Ui_main, QtWidgets.QWidget):
         MyFrame.Menu(self.fr_menu_top).top()
         MyFrame.Menu(self.fr_menu_bottom).bottom()
         MyFrame.Cadre(self.fr_main).th2_fin()
-
-        for wg in [
-            self.fr_cb, self.fr_de, self.fr_lw, self.fr_pb, self.fr_ck,
-            self.fr_rb, self.fr_pg, self.fr_sb, self.fr_tw, self.fr_le,
-            self.fr_te, self.fr_pte, self.fr_tb, self.fr_trw, self.fr_sd,
-            self.fr_demo_cadre, self.fr_fr, self.fr_lb
-        ]: MyFrame.Cadre(wg).bn1()
-
-        MyFrame.Demo_hover(self.fr_demo_cadre_hover)
-        for wg in [self.fr_demo_th, self.fr_tbx_demo_th_1, self.fr_tbx_demo_th_2]: MyFrame.Base(wg).Base()
-        for wg in [self.fr_tbx_demo_tr_1, self.fr_tbx_demo_tr_2]: MyFrame.Base(wg).Transparent()
         ### /QFrame  ###
 
 
         ### QComboBox ###
-        MyComboBox.Base(self.cb_demo_th).Base()
-        MyComboBox.Base(self.cb_demo_tr).Transparent()
         ### /QComboBox ###
 
 
         ### QComboBox ###
-        MyFontComboBox.Base(self.fcb_demo_th).Base()
-        MyFontComboBox.Base(self.fcb_demo_tr).Transparent()
         ### /QComboBox ###
 
 
         ### QLineEdit ###
-        MyLineEdit.Base(self.le_demo_th).Base()
-        MyLineEdit.Base(self.le_demo_tr).Transparent()
         ### /QLineEdit ###
 
 
         ### QTextEdit ###
-        MyTextEdit.Demo(self.te_demo_th).Base()
-        MyTextEdit.Demo(self.te_demo_tr).Transparent()
         ### /QTextEdit ###
 
 
         ### QPlainTextEdit ###
-        MyPlainTextEdit.Demo(self.pte_demo_th).Base()
-        MyPlainTextEdit.Demo(self.pte_demo_tr).Transparent()
         ### /QPlainTextEdit ###
 
 
         ### QSpinBox ###
-        MySpinBox.PlusMinus(self.sb_demo).Base()
-        MySpinBox.PlusMinus(self.sb_demo_3).Transparent()
-        MySpinBox.UpDown(self.sb_demo_2).Base()
         ### /QSpinBox ###
 
 
         ### QDoubleSpinBox ###
-        MyDoubleSpinBox.UpDown(self.dsb_demo).Transparent()
         ### /QDoubleSpinBox ###
 
 
         ### QTimeEdit ###
-        MyTimeEdit.Base(self.tie_demo_th).Base()
-        MyTimeEdit.Base(self.tie_demo_tr).Transparent()
         ### /QTimeEdit ###
 
 
         ### QDateEdit ###
-        MyDateEdit.Base(self.de_demo_th).Base()
-        MyDateEdit.Base(self.de_demo_tr).Transparent()
         ### /QDateEdit ###
 
 
         ### QDateTimeEdit ###
-        MyDateTimeEdit.Base(self.dte_demo_th).Base()
-        MyDateTimeEdit.Base(self.dte_demo_tr).Transparent()
         ### /QDateTimeEdit ###
 
 
@@ -243,22 +183,12 @@ class main(Ui_main, QtWidgets.QWidget):
 
         ### QLabel ###
         MyLabel.Base(self.lb_mt_ico).ico_main()
-        MyLabel.Demo(self.lb_lb_demo_th).Base()
         MyLabel.Base(self.lb_mt_nom).Transparent(font=PaFont.HH3)
         MyLabel.Base(self.lb_mb_version).Transparent()
-        MyLabel.Demo(self.lb_lb_demo_tr).Transparent()
-        for wg in [
-            self.lb_cb_demo, self.lb_de_demo, self.lb_lw_demo, self.lb_pb_demo, self.lb_ck_demo,
-            self.lb_rb_demo, self.lb_pg_demo, self.lb_sb_demo, self.lb_tw_demo, self.lb_le_demo,
-            self.lb_te_demo, self.lb_pte_demo, self.lb_tb_demo, self.lb_trw_demo, self.lb_sd_demo,
-            self.lb_fr_demo, self.lb_lb_demo
-        ]: MyLabel.Demo(wg).wg_categorie()
         ### /QLabel ###
 
 
         ### QProgressBar ###
-        MyProgressBar.Demo(self.pg_demo_th).Base()
-        MyProgressBar.Demo(self.pg_demo_tr).Transparent()
         ### /QProgressBar ###
     def IN_WG(self):
         ### Base ###
@@ -290,31 +220,6 @@ class main(Ui_main, QtWidgets.QWidget):
                 """
             )
             self.hlay_menu_bottom.addWidget(self.size_grip)
-
-
-
-
-        # Demo lw
-        model = QtGui.QStandardItemModel(60, 1)
-        for i in range(60):
-            self.lw_demo_th.addItem(f"je suis l'item : {i}")
-            self.lw_demo_tr.addItem(f"je suis l'item : {i}")
-            model.setItem(i, 0, QtGui.QStandardItem(f"je suis l'item : {i}"))
-        self.lv_demo_th.setModel(model)
-        self.lv_demo_tr.setModel(model)
-
-        # Demo tv
-        model = QtGui.QStandardItemModel(20, 100)
-        for ic in range(100):
-            for ir in range(20):
-                model.setItem(ir, ic, QtGui.QStandardItem(f"item:{ic + ir}"))
-        self.tv_demo_th.setModel(model)
-        self.tv_demo_tr.setModel(model)
-
-        model = QtWidgets.QFileSystemModel()
-        model.setRootPath('')
-        self.trv_demo_th.setModel(model)
-        self.trv_demo_tr.setModel(model)
     def IN_CONNECTIONS(self):
         ### Menu_top ###
         self.pb_mt_option.clicked.connect(lambda: OptionBox.MAIN(fen_main=fen))
