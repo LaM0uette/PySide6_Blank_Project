@@ -148,23 +148,3 @@ class ToolBox:
                 radius=(3, )*4
             )
         )
-
-
-##################
-##     DEMO     ##
-##################
-class Demo_hover:
-    def __init__(self, widget):
-        self.widget = widget
-
-        Style(
-            widget=self.widget,
-            background=DcRgbBg.Base(gen=PaRgb.TR),
-
-            border=DcBorder.Base(
-                gen=(PaStyleBase.BORDER,) * 4,
-                gen_rgb=PaRgb.BN1,
-                hover_style="dashed",
-                radius=(3, )*4
-            ),
-    )
