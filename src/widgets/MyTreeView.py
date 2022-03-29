@@ -51,10 +51,10 @@ class Base:
 
             border_item=DcBorder.Base(
                 gen=(0, 0, 0, 2),
-                base=PaRgb.TH2,
-                hover=PaRgb.TH3,
-                checked=PaRgb.BN1,
-                checked_hover=PaRgb.BN1,
+                base_rgb=PaRgb.TH2,
+                hover_rgb=PaRgb.TH3,
+                checked_rgb=PaRgb.BN1,
+                checked_hover_rgb=PaRgb.BN1,
                 radius=(0,) * 4
             )
         )
@@ -96,10 +96,10 @@ class Base:
             ),
             border_item=DcBorder.Base(
                 gen=(0, 0, 0, 2),
-                base=PaRgb.TH2,
-                hover=PaRgb.TH3,
-                checked=PaRgb.BN1,
-                checked_hover=PaRgb.BN1,
+                base_rgb=PaRgb.TH2,
+                hover_rgb=PaRgb.TH3,
+                checked_rgb=PaRgb.BN1,
+                checked_hover_rgb=PaRgb.BN1,
                 radius=(0,) * 4
             )
         )
