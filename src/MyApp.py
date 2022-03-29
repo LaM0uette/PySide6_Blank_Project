@@ -128,7 +128,7 @@ class main(Ui_main, QtWidgets.QWidget):
 
 
         ###  QFrame  ###
-        MyFrame.Base(self.fr_body).Base(rgb=PaRgb.TH1)
+        MyFrame.Base(self.fr_body).Base_no_radius(rgb=PaRgb.TH1)
         MyFrame.Menu(self.fr_menu_top).top()
         MyFrame.Menu(self.fr_menu_bottom).bottom()
         MyFrame.Cadre(self.fr_main).th2_fin()

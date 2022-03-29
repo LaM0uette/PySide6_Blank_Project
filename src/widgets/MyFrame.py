@@ -14,6 +14,13 @@ class Base:
             widget=self.widget,
             background=DcRgbBg.Base(gen=rgb)
         )
+    def Base_no_radius(self, rgb=PaRgb.TH3):
+        Style(
+            widget=self.widget,
+            background=DcRgbBg.Base(gen=rgb),
+
+            border=DcBorder.Base(radius=(0, )*4)
+        )
     def Transparent(self, rgb=PaRgb.TR):
         Style(
             widget=self.widget,

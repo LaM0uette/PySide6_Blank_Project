@@ -44,7 +44,7 @@ class SplashScreen(splash_screen_ui.Ui_SplashScreen, QtWidgets.QDialog):
 
 
         ### QProgressBar ###
-        ProgressBar.Base(self.pg_chargement).Chargement()
+        MyProgressBar.Base(self.pg_chargement).Chargement()
         ### /QProgressBar ###
     def IN_WG(self):
         ### Base ###
