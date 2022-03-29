@@ -48,7 +48,7 @@ class MsgDlg(msg_ui.Ui_Msg, QtWidgets.QDialog):
         self.setWindowOpacity(self.opacity)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.Tool)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        self.setGraphicsEffect(Shadow().ombre_portee(self))
+        self.setGraphicsEffect(PaShadow.OMBRE_PORTEE(self))
         self.setWindowModality(QtCore.Qt.ApplicationModal)
     def IN_SETUP_UI(self):
         ### Ui ###
@@ -56,30 +56,30 @@ class MsgDlg(msg_ui.Ui_Msg, QtWidgets.QDialog):
         self.glay_main.setContentsMargins(v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP)
     def IN_CLASSE(self):
         ### QFrame ###
-        Frame.Menu(self.fr_menu_top).top()
-        Frame.Cadre(self.fr_main).th2()
-        Frame.Dlg(self.fr_body).th(rgb=Rgb().th1())
-        Frame.Menu(self.fr_msg_bottom).bottom_dlg()
+        MyFrame.Menu(self.fr_menu_top).top()
+        MyFrame.Cadre(self.fr_main).th2_fin()
+        MyFrame.Dlg(self.fr_body).th(rgb=PaRgb.TH1)
+        MyFrame.Menu(self.fr_msg_bottom).bottom_dlg()
         ### /QFrame ###
 
 
         ### QLabel ###
-        Label.Base(self.lb_mt_ico).ico_custom(img=self.ico, img_rgb=self.ico_rgb)
-        Label.Base(self.lb_mt_nom, font_size=Font().h3()).tr()
-        Label.Base(self.lb_msg_text).tr()
+        MyLabel.Base(self.lb_mt_ico).ico_custom(img=self.ico, img_rgb=self.ico_rgb)
+        MyLabel.Base(self.lb_mt_nom).Transparent(font=PaFont.HH3)
+        MyLabel.Base(self.lb_msg_text).Transparent()
         ### /QLabel ###
 
 
         ### QPushButton ###
-        PushButton.Dlg(self.pb_msg_ok).ok()
-        PushButton.menu_top(self.pb_mt_quitter).quitter()
+        MyPushButton.Dlg(self.pb_msg_ok).ok()
+        MyPushButton.MenuTop(self.pb_mt_quitter).quitter()
         ### /QPushButton ###
     def IN_WG(self):
         # Base
-        self.setCursor(Functions().SET_CURSOR(cur=Cur().souris()))
+        self.setCursor(Functions().SET_CURSOR(cur=PaCur.SOURIS))
 
         # Frame menu_top
-        self.fr_menu_top.setFixedHeight(Dim().h9())
+        self.fr_menu_top.setFixedHeight(PaDim.H9)
 
         # Menu_top
         self.lb_mt_nom.setText(self.title)

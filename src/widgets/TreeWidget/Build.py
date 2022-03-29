@@ -22,7 +22,7 @@ class Build:
             animate=False,
             scroll_h=vb_wg.SCROLL_H,
             scroll_v=vb_wg.SCROLL_V,
-            focus_policy=FocusPolicy().no_focus(),
+            focus_policy=PaFocusPolicy.NO,
             frame_shape=vb_wg.FRAME_SHAPE,
             frame_shadow=vb_wg.FRAME_SHADOW,
             line_width=0,
@@ -38,14 +38,14 @@ class Build:
             bg_item_hover=vb_wg.BG_ITEM_HOVER,
             bg_item_checked=vb_wg.BG_ITEM_CHECKED,
             bg_item_checked_hover=vb_wg.BG_ITEM_CHECKED_HOVER,
-            bg_header=Rgb().th2(),
+            bg_header=PaRgb.TH2,
             # Couleurs FG
             fg=vb_wg.FG,
             fg_item=vb_wg.FG_ITEM,
             fg_item_hover=vb_wg.FG_ITEM_HOVER,
             fg_item_checked=vb_wg.FG_ITEM_CHECKED,
             fg_item_checked_hover=vb_wg.FG_ITEM_CHECKED_HOVER,
-            fg_header=Rgb().th1(),
+            fg_header=PaRgb.TH1,
 
             # Bordures
             border=vb_wg.BORDER_WIDTH,
@@ -80,7 +80,7 @@ class Build:
             radius=vb_wg.RADIUS,
             radius_item=vb_wg.RADIUS,
 
-            # Scroll
+            # PaScroll
             scroll_bg=vb_wg.SCROLL_BG,
             scroll_width=vb_wg.SCROLL_WIDTH,
             scroll_height=vb_wg.SCROLL_HEIGHT,
@@ -93,31 +93,31 @@ class Build:
     ):
         """
         *Border_Style: str() : dashed | dot-dash | dot-dot-dash | dotted | double | groove | inset | outset | ridge | solid | none \n
-        *Cur: list() : Cur().%nomCurseur() \n
-        *Dim: int() : Dim().%nomDim() \n
-        *FocusPolicy: QtCore.Qt : FocusPolicy().%nomFocus \n
-        *Font: int() : Font().%nomFont() \n
+        *PaCur: list() : PaCur().%nomCurseur() \n
+        *PaDim: int() : PaDim().%nomDim() \n
+        *PaFocusPolicy: QtCore.Qt : PaFocusPolicy().%nomFocus \n
+        *PaFont: int() : PaFont().%nomFont() \n
         *RgbBox: tuple() : RgbBox().%nomCouleur() \n
-        *FrameShape: QtWidgets.QFrame : FrameShape().%nomFrameForme \n
-        *FrameShadow: QtWidgets.QFrame : FrameShadow().%nomFrameOmbre \n
-        *Scroll: QtCore.Qt : Scroll().%nomScroll() \n
+        *PaFrameShape: QtWidgets.QFrame : PaFrameShape().%nomFrameForme \n
+        *PaFrameShadow: QtWidgets.QFrame : PaFrameShadow().%nomFrameOmbre \n
+        *PaScroll: QtCore.Qt : PaScroll().%nomScroll() \n
         *Tuple: tuple() : (int(), int(), int(), int()) == (Top, Bottom, Right, Left) | (TopRight, TopLeft, BottomRight, BottomLeft) \n
 
         :param wgs: Widgets séparés par ","
-        :param width: *Dim
-        :param height: *Dim
+        :param width: *PaDim
+        :param height: *PaDim
         :param font: str()
-        :param font_size: *Font
+        :param font_size: *PaFont
         :param animate: bool()
-        :param scroll_h: *Scroll
-        :param scroll_v: *Scroll
-        :param focus_policy: *FocusPolicy
-        :param frame_shape: *FrameShape
-        :param frame_shadow: *FrameShadow
+        :param scroll_h: *PaScroll
+        :param scroll_v: *PaScroll
+        :param focus_policy: *PaFocusPolicy
+        :param frame_shape: *PaFrameShape
+        :param frame_shadow: *PaFrameShadow
         :param line_width: int()
         :param header_hidden: bool()
         :param sorting: bool()
-        :param cursor: *Cur
+        :param cursor: *PaCur
         :param bg: *RgbBox
         :param bg_item: *RgbBox
         :param bg_item_hover: *RgbBox
@@ -154,14 +154,14 @@ class Build:
         :param radius: *Tuple
         :param radius_item: *Tuple
         :param scroll_bg: *RgbBox
-        :param scroll_width: *Dim
-        :param scroll_height: *Dim
+        :param scroll_width: *PaDim
+        :param scroll_height: *PaDim
         :param scroll_handle_bg: *RgbBox
         :param scroll_handle_bg_hover: *RgbBox
         :param scroll_handle_fg: *RgbBox
         :param scroll_handle_fg_hover: *RgbBox
-        :param scroll_handle_min_width: *Dim
-        :param scroll_handle_min_height: *Dim
+        :param scroll_handle_min_width: *PaDim
+        :param scroll_handle_min_height: *PaDim
         """
         
         style = f"""

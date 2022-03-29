@@ -98,7 +98,7 @@ applications facilement et rapidement en customisant les différents Widgets de 
 > from src import *
 > ```
 > Cependant, il faut faire attention à ne pas importer un module en boucle.   
-> Si vous importer le module ```Rgb()``` dans le fichier Rgb le programme ne pourras pas se lancer.
+> Si vous importer le module ```Rgb``` dans le fichier Rgb le programme ne pourras pas se lancer.
 > 
 > <br>
 > 
@@ -109,35 +109,40 @@ applications facilement et rapidement en customisant les différents Widgets de 
 > from src.lib.palettes import *
 > ```
 > 
-> Ensuite, il suffit d'écrire : nomPalette().Valeur()   
+> Ensuite, il suffit d'écrire : nomPalette.VALEUR 
 >    
 > Voici un exemple pour chaque palette :
-> - ***Align :*** Align().top()
-> - ***AutoFormating :*** AutoFormating().none()
-> - ***ButtonSymbols :*** ButtonSymbols().no_button()
-> - ***Cur :*** Cur().crayon()
-> - ***Dim :*** Dim().h4()
-> - ***DragDropMode :*** DragDropMode().drag_and_drop()
-> - ***DropAction :*** DropAction().move()
-> - ***EchoMode :*** EchoMode().normal()
-> - ***Flow :*** Flow().left_to_right()
-> - ***FocusPolicy :*** FocusPolicy().no_focus()
-> - ***Font :*** Font().h2()
-> - ***FrameShadow :*** FrameShadow().plain()
-> - ***FrameShape :*** FrameShape().no_frame()
-> - ***Img :*** Img().alerte()
-> - ***InputMask :*** InputMask().no()
-> - ***InsertPolicy :*** InsertPolicy().no_insert()
-> - ***Keys :*** Keys().f1()
-> - ***ProgressFormat :*** ProgressFormat().percentage()
-> - ***Rgb :*** Rgb().th2()
-> - ***Scroll :*** Scroll().on()
-> - ***SelectionBehavior :*** SelectionBehavior().row()
-> - ***SelectionMode :*** SelectionMode().no()
-> - ***Shadow :*** Shadow().ombre_portee()
-> - ***StyleBase :*** StyleBase().border()
-> - ***TextFormat :*** TextFormat().plain()
-> - ***TickPosition :*** TickPosition().no()
+> - ***PaAlign :*** PaAlign.TOP
+> - ***PaArrowType :*** PaArrowType.NO
+> - ***PaAutoFormating :*** PaAutoFormating.NONE
+> - ***PaButtonSymbols :*** PaButtonSymbols.NO
+> - ***PaCur :*** PaCur.CRAYON
+> - ***PaDim :*** PaDim.H4
+> - ***PaDragDropMode :*** PaDragDropMode.DRAG_AND_DROP
+> - ***PaDropAction :*** PaDropAction.MOVE
+> - ***PaEchoMode :*** PaEchoMode.NORMAL
+> - ***PaFlow :*** PaFlow.LEFT_TO_RIGHT
+> - ***PaFocusPolicy :*** PaFocusPolicy.NO
+> - ***PaFont :*** PaFont.TEXTE
+> - ***PaFrameShadow :*** PaFrameShadow.PLAIN
+> - ***PaFrameShape :*** PaFrameShape.NO
+> - ***PaImg :*** PaImg.ALERTE
+> - ***PaInputMask :*** PaInputMask.NO
+> - ***PaInsertPolicy :*** PaInsertPolicy.NO
+> - ***PaKeys :*** PaKeys.F1
+> - ***PaLayoutDirection :*** PaLayoutDirection.LEFT_TO_RIGHT
+> - ***PaPopupMode :*** PaPopupMode.DELAYED
+> - ***PaProgressFormat :*** PaProgressFormat.PERCENTAGE
+> - ***PaRgb :*** PaRgb.TH2
+> - ***PaScroll :*** PaScroll.ON
+> - ***PaSelectionBehavior :*** PaSelectionBehavior.ROW
+> - ***PaSelectionMode :*** PaSelectionMode.NO
+> - ***PaShadow :*** PaShadow.OMBRE_PORTEE(wg)
+> - ***PaSizePolicy :*** PaSizePolicy.FIXED
+> - ***PaStyleBase :*** PaStyleBase.BORDER
+> - ***PaTextFormat :*** PaTextFormat.PLAIN
+> - ***PaTickPosition :*** PaTickPosition.NO
+> - ***PaToolButtonStyle :*** PaToolButtonStyle.ICON_ONLY
 > 
 > ### Widgets :
 > Chaque widget possède sa propre classe (src/widgets/"nomDuWidget"/"nomDuWidget")   
@@ -155,9 +160,9 @@ applications facilement et rapidement en customisant les différents Widgets de 
 > Ensuite, il suffit d'écrire : nomDlg().typeDlg()   
 >    
 > Voici un exemple pour chaque dialogue :
-> - ***Saisie de texte :*** InputBox().TXT(*arguments)
-> - ***Message :*** MsgBox().INFO(*arguments)
-> - ***Menu d'option :*** OptionBox().MAIN(*arguments)
-> - ***Demande de validation :*** ResponseBox().INFO(*arguments)
-> - ***Choix d'une couleur :*** RgbBox().GET(*arguments)
+> - ***Saisie de texte :*** InputBox.TXT(*arguments)
+> - ***Message :*** MsgBox.INFO(*arguments)
+> - ***Menu d'option :*** OptionBox.MAIN(*arguments)
+> - ***Demande de validation :*** ResponseBox.INFO(*arguments)
+> - ***Choix d'une couleur :*** RgbBox.GET(*arguments)
 > 

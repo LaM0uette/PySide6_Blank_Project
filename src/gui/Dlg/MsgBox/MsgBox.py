@@ -1,59 +1,27 @@
+from functools import partial
+
 from src import *
 from src.gui.dlg.MsgBox.MsgDlg import MsgDlg
 
 
 class MsgBox:
-    def __init__(
-            self,
-            width=650,
-            height=250,
-            opacity=1
-    ):
-        self.width = width
-        self.height = height
-        self.opacity = opacity
 
-    def _rtn(self, title, msg, ico, ico_rgb, txt_ok):
+    @staticmethod
+    def __rtn(title, msg, ico, ico_rgb, txt_ok, width, height, opacity):
         msg_dlg = MsgDlg(
             title=title,
             msg=msg,
             ico=ico,
             ico_rgb=ico_rgb,
             txt_ok=txt_ok,
-            width=self.width,
-            height=self.height,
-            opacity=self.opacity
+            width=width,
+            height=height,
+            opacity=opacity
         )
         msg_dlg.exec()
 
 
-    def INFO(
-            self,
-            title="INFO",
-            msg="",
-            ico=Img().info(),
-            ico_rgb="th3",
-            txt_ok="Ok"
-    ):
-        self._rtn(
-            title=title,
-            msg=msg,
-            ico=ico,
-            ico_rgb=ico_rgb,
-            txt_ok=txt_ok
-        )
-    def ALERTE(
-            self,
-            title="ALERTE",
-            msg="",
-            ico=Img().alerte(),
-            ico_rgb="th3",
-            txt_ok="Ok"
-    ):
-        self._rtn(
-            title=title,
-            msg=msg,
-            ico=ico,
-            ico_rgb=ico_rgb,
-            txt_ok=txt_ok
-        )
+    __WIDTH, __HEIGHT, __OPACITY = 650, 250, 1
+
+    INFO = partial(__rtn, title="INFO", msg="", ico=PaImg.INFO, ico_rgb="th3", txt_ok="Ok", width=__WIDTH, height=__HEIGHT, opacity=__OPACITY)
+    ALERTE = partial(__rtn, title="ALERTE", msg="", ico=PaImg.INFO, ico_rgb="th3", txt_ok="Ok", width=__WIDTH, height=__HEIGHT, opacity=__OPACITY, )

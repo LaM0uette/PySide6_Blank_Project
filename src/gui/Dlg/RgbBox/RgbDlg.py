@@ -52,7 +52,7 @@ class RgbDlg(rgb_ui.Ui_Rgb, QtWidgets.QDialog):
         self.setWindowOpacity(self.opacity)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.Tool)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        self.setGraphicsEffect(Shadow().ombre_portee(self))
+        self.setGraphicsEffect(PaShadow.OMBRE_PORTEE(self))
         self.setWindowModality(QtCore.Qt.ApplicationModal)
     def IN_SETUP_UI(self):
         ### Ui ###
@@ -60,30 +60,30 @@ class RgbDlg(rgb_ui.Ui_Rgb, QtWidgets.QDialog):
         self.glay_main.setContentsMargins(v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP)
     def IN_CLASSE(self):
         ### QFrame ###
-        Frame.Menu(self.fr_menu_top).top()
-        Frame.Cadre(self.fr_main).th2()
-        Frame.Dlg(self.fr_body).th(rgb=Rgb().th1())
-        Frame.Menu(self.fr_rgb_bottom).bottom_dlg()
-        Frame.Base(self.fr_rgb_colors).th()
+        MyFrame.Menu(self.fr_menu_top).top()
+        MyFrame.Cadre(self.fr_main).th2_fin()
+        MyFrame.Dlg(self.fr_body).th(rgb=PaRgb.TH1)
+        MyFrame.Menu(self.fr_rgb_bottom).bottom_dlg()
+        MyFrame.Base(self.fr_rgb_colors).Base()
         ### /QFrame ###
 
 
         ### QLabel ###
-        Label.Base(self.lb_mt_ico).ico_custom(img=self.ico, img_rgb=self.ico_rgb)
-        Label.Base(self.lb_mt_nom, font_size=Font().h3()).tr()
-        Label.Base(self.lb_rgb_red, self.lb_rgb_green, self.lb_rgb_blue, font_size=Font().h4()).tr()
+        MyLabel.Base(self.lb_mt_ico).ico_custom(img=self.ico, img_rgb=self.ico_rgb)
+        MyLabel.Base(self.lb_mt_nom).Transparent(font=PaFont.HH3)
+        for wg in [self.lb_rgb_red, self.lb_rgb_green, self.lb_rgb_blue]: MyLabel.Base(wg).Transparent(font=PaFont.BASE)
         ### /QLabel ###
 
 
         ### QPushButton ###
-        PushButton.Dlg(self.pb_rgb_ok).ok()
-        PushButton.Dlg(self.pb_rgb_annuler).nok_inv()
-        PushButton.menu_top(self.pb_mt_quitter).quitter()
+        MyPushButton.Dlg(self.pb_rgb_ok).ok()
+        MyPushButton.Dlg(self.pb_rgb_annuler).nok_inv()
+        MyPushButton.MenuTop(self.pb_mt_quitter).quitter()
         ### /QPushButton ###
 
 
         ### QSpinBox ###
-        SpinBox.Dlg(self.sb_rgb_red, self.sb_rgb_green, self.sb_rgb_blue).rgb()
+        for wg in [self.sb_rgb_red, self.sb_rgb_green, self.sb_rgb_blue]: MySpinBox.Dlg(wg).rgb()
         ### /QSpinBox ###
 
 
@@ -93,14 +93,14 @@ class RgbDlg(rgb_ui.Ui_Rgb, QtWidgets.QDialog):
 
 
         ### QText ###
-        LineEdit.Base(self.le_rgb_hex).rgb_hex()
+        MyLineEdit.Base(self.le_rgb_hex).rgb_hex()
         ### /QText ###
     def IN_WG(self):
         # Base
-        self.setCursor(Functions().SET_CURSOR(cur=Cur().souris()))
+        self.setCursor(Functions().SET_CURSOR(cur=PaCur.SOURIS))
 
         # Frame menu_top
-        self.fr_menu_top.setFixedHeight(Dim().h9())
+        self.fr_menu_top.setFixedHeight(PaDim.H9)
 
         # Menu_top
         self.lb_mt_nom.setText(self.title)
@@ -176,7 +176,7 @@ class RgbDlg(rgb_ui.Ui_Rgb, QtWidgets.QDialog):
 
         self.le_rgb_hex.setText(Functions().RGB_HEX(rgb=rgb))
 
-        Frame.palette_rgb(self.fr_rgb_colors, rgb=rgba)
+        MyFrame.palette_rgb(self.fr_rgb_colors, rgb=rgba)
         Slider.Base(self.sd_rgb_red).rgb(rgb=rgba, rgb_1=rgb_red_1, rgb_2=rgb_red_2)
         Slider.Base(self.sd_rgb_green).rgb(rgb=rgba, rgb_1=rgb_green_1, rgb_2=rgb_green_2)
         Slider.Base(self.sd_rgb_blue).rgb(rgb=rgba, rgb_1=rgb_blue_1, rgb_2=rgb_blue_2)

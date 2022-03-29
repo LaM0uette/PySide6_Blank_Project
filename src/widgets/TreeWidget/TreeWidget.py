@@ -14,8 +14,8 @@ class Base:
         Build(
             *self.wgs,
 
-            bg_header=Rgb().th3(),
-            fg_header=Rgb().th1(),
+            bg_header=PaRgb.TH3,
+            fg_header=PaRgb.TH1,
         )
     def tr(self):
         bd_item = (0, 0, 0, 2)
@@ -23,25 +23,25 @@ class Base:
         Build(
             *self.wgs,
 
-            scroll_h=Scroll().off(),
-            scroll_v=Scroll().off(),
+            scroll_h=PaScrollPolicy.OFF,
+            scroll_v=PaScrollPolicy.OFF,
 
-            bg=Rgb().tr(),
-            bg_item=Rgb().tr(),
-            bg_item_hover=Rgb().tr(),
-            bg_item_checked=Rgb().tr(),
-            bg_item_checked_hover=Rgb().tr(),
-            fg_item=Rgb().th3(),
-            fg_item_checked=Rgb().bn1(),
+            bg=PaRgb.TR,
+            bg_item=PaRgb.TR,
+            bg_item_hover=PaRgb.TR,
+            bg_item_checked=PaRgb.TR,
+            bg_item_checked_hover=PaRgb.TR,
+            fg_item=PaRgb.TH3,
+            fg_item_checked=PaRgb.BN1,
 
             border_item=bd_item,
             border_item_hover=bd_item,
             border_item_checked=bd_item,
             border_item_checked_hover=bd_item,
-            border_item_rgb=Rgb().th2(),
-            border_item_hover_rgb=Rgb().th3(),
-            border_item_checked_rgb=Rgb().bn1(),
-            border_item_checked_hover_rgb=Rgb().bn1(),
+            border_item_rgb=PaRgb.TH2,
+            border_item_hover_rgb=PaRgb.TH3,
+            border_item_checked_rgb=PaRgb.BN1,
+            border_item_checked_hover_rgb=PaRgb.BN1,
 
             radius_item=(0,) * 4
         )
@@ -52,33 +52,33 @@ class Base:
         Build(
             *self.wgs,
 
-            width=Dim().h5(),
+            width=PaDim.H5,
 
-            scroll_h=Scroll().off(),
-            scroll_v=Scroll().off(),
+            scroll_h=PaScrollPolicy.OFF,
+            scroll_v=PaScrollPolicy.OFF,
 
-            bg=Rgb().tr(),
-            bg_item=Rgb().tr(),
-            bg_item_hover=Rgb().tr(),
-            bg_item_checked=Rgb().tr(),
-            bg_item_checked_hover=Rgb().tr(),
-            bg_header=Rgb().th1(),
-            fg_item=Rgb().th3(),
-            fg_item_checked=Rgb().bn1(),
-            fg_header=Rgb().th1(),
+            bg=PaRgb.TR,
+            bg_item=PaRgb.TR,
+            bg_item_hover=PaRgb.TR,
+            bg_item_checked=PaRgb.TR,
+            bg_item_checked_hover=PaRgb.TR,
+            bg_header=PaRgb.TH1,
+            fg_item=PaRgb.TH3,
+            fg_item_checked=PaRgb.BN1,
+            fg_header=PaRgb.TH1,
 
             border=bd_gen,
             border_hover=bd_gen,
-            border_rgb=Rgb().th2(),
-            border_hover_rgb=Rgb().th2(),
+            border_rgb=PaRgb.TH2,
+            border_hover_rgb=PaRgb.TH2,
             border_item=bd_item,
             border_item_hover=bd_item,
             border_item_checked=bd_item,
             border_item_checked_hover=bd_item,
-            border_item_rgb=Rgb().th2(),
-            border_item_hover_rgb=Rgb().th3(),
-            border_item_checked_rgb=Rgb().bn1(),
-            border_item_checked_hover_rgb=Rgb().bn1(),
+            border_item_rgb=PaRgb.TH2,
+            border_item_hover_rgb=PaRgb.TH3,
+            border_item_checked_rgb=PaRgb.BN1,
+            border_item_checked_hover_rgb=PaRgb.BN1,
 
             radius_item=(0,) * 4
         )

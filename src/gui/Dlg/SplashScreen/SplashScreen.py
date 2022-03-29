@@ -24,7 +24,7 @@ class SplashScreen(splash_screen_ui.Ui_SplashScreen, QtWidgets.QDialog):
         self.setWindowOpacity(self.opacity)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.Tool)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        self.setGraphicsEffect(Shadow().ombre_portee(self))
+        self.setGraphicsEffect(PaShadow.OMBRE_PORTEE(self))
         self.setWindowModality(QtCore.Qt.ApplicationModal)
     def IN_SETUP_UI(self):
         ### Ui ###
@@ -32,14 +32,14 @@ class SplashScreen(splash_screen_ui.Ui_SplashScreen, QtWidgets.QDialog):
         self.vlay_main.setContentsMargins(v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP)
     def IN_CLASSE(self):
         ### QFrame ###
-        Frame.SplashScreen(self.fr_main)
+        MyFrame.SplashScreen(self.fr_main)
         ### /QFrame ###
 
 
         ### QLabel ###
-        Label.Base(self.lb_ico).ico_splash()
-        Label.Base(self.lb_titre, font_size=Font().h3()).tr()
-        Label.Base(self.lb_description, self.lb_chargement, font_size=Font().h5()).tr()
+        MyLabel.Base(self.lb_ico).ico_splash()
+        MyLabel.Base(self.lb_titre).Transparent(font=PaFont.HH3)
+        for wg in [self.lb_description, self.lb_chargement]: MyLabel.Base(wg).Transparent(font=PaFont.TEXTE)
         ### /QLabel ###
 
 
@@ -48,11 +48,11 @@ class SplashScreen(splash_screen_ui.Ui_SplashScreen, QtWidgets.QDialog):
         ### /QProgressBar ###
     def IN_WG(self):
         ### Base ###
-        self.setCursor(Functions().SET_CURSOR(cur=Cur().souris()))
+        self.setCursor(Functions().SET_CURSOR(cur=PaCur.SOURIS))
 
         ### Infos ###
-        self.lb_titre.setText(config.nom)
-        self.lb_description.setText(config.description)
+        self.lb_titre.setText(Config.nom)
+        self.lb_description.setText(Config.description)
     def IN_CONNECTIONS(self):
         pass
     def IN_ACT(self):

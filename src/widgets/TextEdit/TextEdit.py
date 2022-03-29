@@ -18,6 +18,30 @@ class Base:
         Build(
             *self.wgs,
 
-            bg=Rgb().tr(),
-            fg=Rgb().th3()
+            bg=PaRgb.TR,
+            fg=PaRgb.TH3
+        )
+
+
+##################
+##     DEMO     ##
+##################
+class Demo:
+    def __init__(self, *wgs):
+        self.wgs = wgs
+
+    def th(self):
+        Build(
+            *self.wgs,
+
+            height=PaDim.H5
+        )
+    def tr(self):
+        Build(
+            *self.wgs,
+
+            height=PaDim.H5,
+
+            bg=PaRgb.TR,
+            fg=PaRgb.TH3
         )

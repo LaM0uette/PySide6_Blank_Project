@@ -66,7 +66,7 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
         self.setWindowOpacity(self.opacity)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.Tool)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        self.setGraphicsEffect(Shadow().ombre_portee(self))
+        self.setGraphicsEffect(PaShadow.OMBRE_PORTEE(self))
         self.setWindowModality(QtCore.Qt.ApplicationModal)
     def IN_SETUP_UI(self):
         ### Ui ###
@@ -74,52 +74,54 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
         self.glay_main.setContentsMargins(v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP)
     def IN_CLASSE(self):
         ### QCheckBox ###
-        CheckBox.Base(self.ck_opt_cfg_debug, self.ck_opt_cfg_autoclose, self.ck_opt_cfg_resize, self.ck_opt_cfg_ui_pin).tr()
+        for wg in [
+            self.ck_opt_cfg_debug, self.ck_opt_cfg_autoclose, self.ck_opt_cfg_resize, self.ck_opt_cfg_ui_pin
+        ]: MyCheckBox.Base(wg).Transparent()
         ### /QCheckBox ###
 
 
         ### QComboBox ###
-        ComboBox.Base(self.fcb_opt_ft_font, self.cb_opt_tm_theme).th()
+        for wg in [self.fcb_opt_ft_font, self.cb_opt_tm_theme]: MyComboBox.Base(wg).Font()
         ### /QComboBox ###
 
 
         ### QFrame ###
-        Frame.Menu(self.fr_menu_top).top()
-        Frame.Cadre(self.fr_main).th2()
-        Frame.Cadre(self.fr_opt_cfg_opacity, self.fr_opt_cfg_autoclose, self.fr_opt_cfg_resize).th3()
-        Frame.Dlg(self.fr_body).th(rgb=Rgb().th1())
-        Frame.Menu(self.fr_opt_bottom).bottom_dlg()
+        MyFrame.Menu(self.fr_menu_top).top()
+        MyFrame.Cadre(self.fr_main).th2_fin()
+        for wg in [self.fr_opt_cfg_opacity, self.fr_opt_cfg_autoclose, self.fr_opt_cfg_resize]: MyFrame.Cadre(wg).th3()
+        MyFrame.Dlg(self.fr_body).th(rgb=PaRgb.TH1)
+        MyFrame.Menu(self.fr_opt_bottom).bottom_dlg()
         ### /QFrame ###
 
 
         ### QLabel ###
-        Label.Base(self.lb_mt_ico).ico_main()
-        Label.Base(self.lb_mt_nom, font_size=Font().h3()).tr()
-        Label.Base(self.lb_opt_info_nom).titre()
-        Label.Base(
+        MyLabel.Base(self.lb_mt_ico).ico_main()
+        MyLabel.Base(self.lb_mt_nom).Transparent(font=PaFont.HH3)
+        MyLabel.Base(self.lb_opt_info_nom).Title()
+        for wg in [
             self.lb_opt_info_desc, self.lb_opt_info_auteur, self.lb_opt_info_version, self.lb_opt_cfg_opacity,
             self.lb_opt_cfg_debug, self.lb_opt_cfg_autoclose, self.lb_opt_cfg_resize, self.lb_opt_cfg_ui_pin, self.lb_opt_cfg_resize_width,
             self.lb_opt_cfg_resize_height
-        ).tr()
+        ]: MyLabel.Base(wg).Transparent()
         ### /QLabel ###
 
 
         ### QPushButton ###
-        PushButton.Dlg(self.pb_opt_appliquer).ok()
-        PushButton.Dlg(self.pb_opt_ok).nok_inv()
-        PushButton.menu_top(self.pb_mt_quitter).quitter()
+        MyPushButton.Dlg(self.pb_opt_appliquer).ok()
+        MyPushButton.Dlg(self.pb_opt_ok).nok_inv()
+        MyPushButton.MenuTop(self.pb_mt_quitter).quitter()
 
-        PushButton.plein(self.pb_opt_tm_th1).th1()
-        PushButton.plein(self.pb_opt_tm_th2).th2()
-        PushButton.plein(self.pb_opt_tm_th3).th3()
-        PushButton.plein(self.pb_opt_tm_bn1).bn1()
-        PushButton.plein(self.pb_opt_tm_bn2).bn2()
+        MyPushButton.Plein(self.pb_opt_tm_th1).th1()
+        MyPushButton.Plein(self.pb_opt_tm_th2).th2()
+        MyPushButton.Plein(self.pb_opt_tm_th3).th3()
+        MyPushButton.Plein(self.pb_opt_tm_bn1).bn1()
+        MyPushButton.Plein(self.pb_opt_tm_bn2).bn2()
         ### /QPushButton ###
 
 
         ### QSpinBox ###
-        SpinBox.Dlg(self.sb_opt_cfg_opacity).th()
-        SpinBox.Dlg(self.sb_opt_cfg_resize_width, self.sb_opt_cfg_resize_height).inf()
+        MySpinBox.Dlg(self.sb_opt_cfg_opacity).th()
+        for wg in [self.sb_opt_cfg_resize_width, self.sb_opt_cfg_resize_height]: MySpinBox.Dlg(wg).inf()
         ### /QSpinBox ###
 
 
@@ -128,33 +130,33 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
         ### /QTreeWidget ###
     def IN_WG(self):
         # Base
-        self.setCursor(Functions().SET_CURSOR(cur=Cur().souris()))
+        self.setCursor(Functions().SET_CURSOR(cur=PaCur.SOURIS))
 
         # Frame menu_top
-        self.fr_menu_top.setFixedHeight(Dim().h9())
+        self.fr_menu_top.setFixedHeight(PaDim.H9)
 
         # Menu_top
         self.lb_mt_nom.setText(self.title)
 
         # Configs
         try:
-            self.fcb_opt_ft_font.setCurrentText(config.font)
+            self.fcb_opt_ft_font.setCurrentText(Config.font)
 
-            self.sb_opt_cfg_opacity.setValue(config.opacity*100)
-            self.ck_opt_cfg_debug.setChecked(True) if config.debug == True else self.ck_opt_cfg_debug.setChecked(False)
-            self.ck_opt_cfg_autoclose.setChecked(True) if config.auto_close == True else self.ck_opt_cfg_autoclose.setChecked(False)
-            self.ck_opt_cfg_resize.setChecked(True) if config.resize == True else self.ck_opt_cfg_resize.setChecked(False)
-            self.ck_opt_cfg_ui_pin.setChecked(True) if config.toolbox_pin == True else self.ck_opt_cfg_ui_pin.setChecked(False)
+            self.sb_opt_cfg_opacity.setValue(Config.opacity*100)
+            self.ck_opt_cfg_debug.setChecked(True) if Config.debug == True else self.ck_opt_cfg_debug.setChecked(False)
+            self.ck_opt_cfg_autoclose.setChecked(True) if Config.auto_close == True else self.ck_opt_cfg_autoclose.setChecked(False)
+            self.ck_opt_cfg_resize.setChecked(True) if Config.resize == True else self.ck_opt_cfg_resize.setChecked(False)
+            self.ck_opt_cfg_ui_pin.setChecked(True) if Config.toolbox_pin == True else self.ck_opt_cfg_ui_pin.setChecked(False)
 
-            self.sb_opt_cfg_resize_width.setValue(config.widht)
-            self.sb_opt_cfg_resize_height.setValue(config.height)
+            self.sb_opt_cfg_resize_width.setValue(Config.widht)
+            self.sb_opt_cfg_resize_height.setValue(Config.height)
         except: pass
 
         # infos
-        self.lb_opt_info_nom.setText(config.nom)
-        self.lb_opt_info_desc.setText(config.description)
-        self.lb_opt_info_auteur.setText(f"Auteur : {config.auteur}")
-        self.lb_opt_info_version.setText(f"Version : {config.version}")
+        self.lb_opt_info_nom.setText(Config.nom)
+        self.lb_opt_info_desc.setText(Config.description)
+        self.lb_opt_info_auteur.setText(f"Auteur : {Config.auteur}")
+        self.lb_opt_info_version.setText(f"Version : {Config.version}")
 
         # pb dlg
         self.pb_opt_ok.setText(self.txt_ok)
@@ -216,11 +218,12 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
     ##     ACTIONS     ##
     #####################
     def _a_reload_ui(self):
-        PushButton.plein(self.pb_opt_tm_th1).th1()
-        PushButton.plein(self.pb_opt_tm_th2).th2()
-        PushButton.plein(self.pb_opt_tm_th3).th3()
-        PushButton.plein(self.pb_opt_tm_bn1).bn1()
-        PushButton.plein(self.pb_opt_tm_bn2).bn2()
+        MyPushButton.Plein(self.pb_opt_tm_th1).th1()
+        MyPushButton.Plein(self.pb_opt_tm_th2).th2()
+        MyPushButton.Plein(self.pb_opt_tm_th3).th3()
+        MyPushButton.Plein(self.pb_opt_tm_bn1).bn1()
+        MyPushButton.Plein(self.pb_opt_tm_bn2).bn2()
+
         # QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
         #
         # Functions().GEN_SVG()
@@ -234,7 +237,7 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
         # self.fen_main.IN_CLASSE()
         #
         # QtWidgets.QApplication.restoreOverrideCursor()
-
+        #
         # if self.reload:
         MsgBox().INFO(msg="Modifications appliquées !\nVeuillez redémarrer l'application pour appliquer les modifications.")
         self.reload = False
@@ -242,13 +245,15 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
     def a_maj_liste_themes(self):
         self.cb_opt_tm_theme.clear()
 
-        for i, js in enumerate(glob.glob(f"src/theme/*.json")):
-            tm = os.path.basename(js).split(".")[0]
-            self.cb_opt_tm_theme.addItem(tm)
-            if tm == config.theme:
+        for i, js in enumerate(glob.glob(f"theme/*.json")):
+            theme = os.path.basename(js).split(".")[0]
+            self.cb_opt_tm_theme.addItem(theme)
+
+            cfg = Json(lien_json=f"config/config.json").OPEN()
+            if theme == cfg["config"]["theme"]:
                 self.cb_opt_tm_theme.setCurrentIndex(i)
     def a_maj_cb_font(self):
-        ComboBox.Base(self.fcb_opt_ft_font, self.cb_opt_tm_theme).font(font=self.fcb_opt_ft_font.currentText())
+        for wg in [self.fcb_opt_ft_font, self.cb_opt_tm_theme]: MyComboBox.Base(wg).Font(font=self.fcb_opt_ft_font.currentText())
     def a_maj_button_appliquer(self, _reload="False"):
         if not self.pb_opt_appliquer.isVisible():
             self.pb_opt_appliquer.setVisible(True)
@@ -267,18 +272,18 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
         self.stk_option.setCurrentWidget(self.dct_pg.get(item.text(0))[0])
     def f_maj_rgb_theme(self, rgb):
         dct_colors = {
-            "th1": Rgb().th1(),
-            "th2": Rgb().th2(),
-            "th3": Rgb().th3(),
-            "bn1": Rgb().bn1(),
-            "bn2": Rgb().bn2(),
+            "th1": PaRgb.TH1,
+            "th2": PaRgb.TH2,
+            "th3": PaRgb.TH3,
+            "bn1": PaRgb.BN1,
+            "bn2": PaRgb.BN2,
         }
-        colors = RgbBox().GET(rgb=dct_colors.get(rgb))
+        colors = RgbBox.GET(rgb=dct_colors.get(rgb))
         if colors:
             self.a_maj_button_appliquer()
 
             dct = {f"{rgb}": list(colors)}
-            Json(lien_json=f"src/theme/{config.theme}.json").UPDATE(dct)
+            Json(lien_json=f"theme/{Config.theme}.json").UPDATE(dct)
 
             self._a_reload_ui()
     #####
@@ -301,7 +306,7 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
                 "toolbox_pin": True if self.ck_opt_cfg_ui_pin.isChecked() else False
             }
         }
-        Json(lien_json=f"src/config/config.json").UPDATE(dct)
+        Json(lien_json=f"config/config.json").UPDATE(dct)
 
         self._a_reload_ui()
     def f_ok(self):

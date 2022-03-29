@@ -19,7 +19,7 @@ class Build:
             font_size=vb_wg.FONT_SIZE,
 
             # Paramètres
-            auto_formatting=AutoFormating().none(),
+            auto_formatting=PaAutoFormating.NONE,
             focus_policy=vb_wg.FOCUS_POLICY,
             frame_shape=vb_wg.FRAME_SHAPE,
             frame_shadow=vb_wg.FRAME_SHADOW,
@@ -45,7 +45,7 @@ class Build:
             # Rayons
             radius=vb_wg.RADIUS,
 
-            # Scroll
+            # PaScroll
             scroll_bg=vb_wg.SCROLL_BG,
             scroll_width=vb_wg.SCROLL_WIDTH,
             scroll_height=vb_wg.SCROLL_HEIGHT,
@@ -59,24 +59,24 @@ class Build:
         """
         *AutoFormatting: QtWidgets.QTextEdit : AutoFormatting().%nomFormatting() \n
         *Border_Style: str() : dashed | dot-dash | dot-dot-dash | dotted | double | groove | inset | outset | ridge | solid | none \n
-        *Cur: list() : Cur().%nomCurseur() \n
-        *Dim: int() : Dim().%nomDim() \n
-        *FocusPolicy: QtCore.Qt : FocusPolicy().%nomFocus \n
-        *Font: int() : Font().%nomFont() \n
+        *PaCur: list() : PaCur().%nomCurseur() \n
+        *PaDim: int() : PaDim().%nomDim() \n
+        *PaFocusPolicy: QtCore.Qt : PaFocusPolicy().%nomFocus \n
+        *PaFont: int() : PaFont().%nomFont() \n
         *RgbBox: tuple() : RgbBox().%nomCouleur() \n
-        *FrameShape: QtWidgets.QFrame : FrameShape().%nomFrameForme \n
-        *FrameShadow: QtWidgets.QFrame : FrameShadow().%nomFrameOmbre \n
+        *PaFrameShape: QtWidgets.QFrame : PaFrameShape().%nomFrameForme \n
+        *PaFrameShadow: QtWidgets.QFrame : PaFrameShadow().%nomFrameOmbre \n
         *Tuple: tuple() : (int(), int(), int(), int()) == (Top, Bottom, Right, Left) | (TopRight, TopLeft, BottomRight, BottomLeft) \n
 
         :param wgs: Widgets séparés par ","
-        :param width: *Dim
-        :param height: *Dim
+        :param width: *PaDim
+        :param height: *PaDim
         :param font: str()
-        :param font_size: *Font
+        :param font_size: *PaFont
         :param auto_formatting: *AutoFormatting
-        :param focus_policy: *FocusPolicy
-        :param frame_shape: *FrameShape
-        :param frame_shadow: *FrameShadow
+        :param focus_policy: *PaFocusPolicy
+        :param frame_shape: *PaFrameShape
+        :param frame_shadow: *PaFrameShadow
         :param line_width: int()
         :param bg: *RgbBox
         :param bg_selection: *RgbBox
@@ -170,8 +170,8 @@ class Build:
             wg.setPalette(palette_txt)
 
             # Curseur
-            wg.setCursor(Functions().SET_CURSOR(Cur().ibeam()))
-            wg.viewport().setCursor(Functions().SET_CURSOR(Cur().ibeam()))
+            wg.setCursor(Functions().SET_CURSOR(PaCur().ibeam()))
+            wg.viewport().setCursor(Functions().SET_CURSOR(PaCur().ibeam()))
 
             # Style
             wg.setStyleSheet(style)

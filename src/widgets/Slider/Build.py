@@ -38,12 +38,12 @@ class Build:
             gradient=((0,) * 4),
             
             # Dimensions WG
-            width_groove=Dim().h9(),
-            height_groove=Dim().h9(),
-            width_handle_h=Dim().h9(),
-            height_handle_h=Dim().h9(),
-            width_handle_v=Dim().h9(),
-            height_handle_v=Dim().h9(),
+            width_groove=PaDim.H9,
+            height_groove=PaDim.H9,
+            width_handle_h=PaDim.H9,
+            height_handle_h=PaDim.H9,
+            width_handle_v=PaDim.H9,
+            height_handle_v=PaDim.H9,
             
             # Positions WG
             margin_handle_h=(0,) * 4,
@@ -79,24 +79,24 @@ class Build:
     ):
         """
         *Border_Style: str() : dashed | dot-dash | dot-dot-dash | dotted | double | groove | inset | outset | ridge | solid | none \n
-        *Cur: list() : Cur().%nomCurseur() \n
-        *Dim: int() : Dim().%nomDim() \n
-        *FocusPolicy: QtCore.Qt : FocusPolicy().%nomFocus \n
+        *PaCur: list() : PaCur().%nomCurseur() \n
+        *PaDim: int() : PaDim().%nomDim() \n
+        *PaFocusPolicy: QtCore.Qt : PaFocusPolicy().%nomFocus \n
         *RgbBox: tuple() : RgbBox().%nomCouleur() \n
-        *TickPosition: QtWidgets.QSlider : TickPosition().%nomTickPosition() \n
+        *PaTickPosition: QtWidgets.QSlider : PaTickPosition().%nomTickPosition() \n
         *Tuple: tuple() : (int(), int(), int(), int()) == (Top, Bottom, Right, Left) | (TopRight, TopLeft, BottomRight, BottomLeft) \n
 
         :param wgs: Widgets séparés par ","
-        :param width: *Dim
-        :param height: *Dim
-        :param focus_policy: *FocusPolicy
+        :param width: *PaDim
+        :param height: *PaDim
+        :param focus_policy: *PaFocusPolicy
         :param value_min: int()
         :param value_max: int()
         :param value_step: int()
         :param page_step: int()
-        :param tick_position: *TickPosition
+        :param tick_position: *PaTickPosition
         :param tick_interval: int()
-        :param cursor: *Cur
+        :param cursor: *PaCur
         :param bg: *RgbBox
         :param bg_groove: *RgbBox
         :param bg_groove_2: *RgbBox

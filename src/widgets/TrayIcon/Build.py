@@ -56,21 +56,21 @@ class Build:
     ):
         """
         *Border_Style: str() : dashed | dot-dash | dot-dot-dash | dotted | double | groove | inset | outset | ridge | solid | none \n
-        *Cur: list() : Cur().%nomCurseur() \n
-        *Dim: int() : Dim().%nomDim() \n
-        *FocusPolicy: QtCore.Qt : FocusPolicy().%nomFocus \n
-        *Font: int() : Font().%nomFont() \n
+        *PaCur: list() : PaCur().%nomCurseur() \n
+        *PaDim: int() : PaDim().%nomDim() \n
+        *PaFocusPolicy: QtCore.Qt : PaFocusPolicy().%nomFocus \n
+        *PaFont: int() : PaFont().%nomFont() \n
         *RgbBox: tuple() : RgbBox().%nomCouleur() \n
         *Tuple: tuple() : (int(), int(), int(), int()) == (Top, Bottom, Right, Left) | (TopRight, TopLeft, BottomRight, BottomLeft) \n
 
         :param wgs:
-        :param width: *Dim
-        :param height: *Dim
+        :param width: *PaDim
+        :param height: *PaDim
         :param height_separator: int()
         :param font: str()
-        :param font_size: *Font
-        :param focus_policy: *FocusPolicy
-        :param cursor: *Cur
+        :param font_size: *PaFont
+        :param focus_policy: *PaFocusPolicy
+        :param cursor: *PaCur
         :param bg: *RgbBox
         :param bg_item: *RgbBox
         :param bg_item_checked: *RgbBox

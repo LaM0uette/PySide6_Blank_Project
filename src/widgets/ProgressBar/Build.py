@@ -17,15 +17,15 @@ class Build:
             font_size=vb_wg.FONT_SIZE,
 
             # Paramètres
-            align_horizontal=Align().center_horizontal(),
-            align_vertical=Align().center_vertical(),
+            align_horizontal=PaAlign.CENTER_HORIZONTAL,
+            align_vertical=PaAlign.CENTER_VERTICAL,
             progress_format=vb_wg.PROGRESS_FORMAT,
             text_visible=vb_wg.TEXT_VISIBLE,
             value_min=vb_wg.VALUE_MIN,
             value_max=vb_wg.VALUE_MAX,
 
             # Curseur
-            cursor=Cur().souris(),
+            cursor=PaCur.SOURIS,
 
             # Couleurs BG
             bg=vb_wg.BG,

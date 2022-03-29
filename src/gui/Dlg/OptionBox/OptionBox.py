@@ -1,41 +1,27 @@
+from functools import partial
+
 from src import *
 from src.gui.dlg.OptionBox.OptionDlg import OptionDlg
 
 
 class OptionBox:
-    def __init__(self,
-                 fen_main,
-                 width=850,
-                 height=600,
-                 opacity=1
-                 ):
-        self.fen_main = fen_main
-        self.width = width
-        self.height = height
-        self.opacity = opacity
 
-    def _rtn(self, title, msg, ico, ico_rgb, txt_apply, txt_ok):
+    @staticmethod
+    def __rtn(fen_main, title, msg, ico, ico_rgb, txt_apply, txt_ok, width, height, opacity):
         opt = OptionDlg(
-            fen_main=self.fen_main,
+            fen_main=fen_main,
             title=title,
             msg=msg,
             ico=ico,
             ico_rgb=ico_rgb,
             txt_apply=txt_apply,
             txt_ok=txt_ok,
-            width=self.width,
-            height=self.height,
-            opacity=self.opacity
+            width=width,
+            height=height,
+            opacity=opacity
         )
         opt.exec()
 
+    __WIDTH, __HEIGHT, __OPACITY = 850, 600, 1
 
-    def MAIN(self, title="OPTION", msg="", ico=Img().info(), ico_rgb="th3", txt_apply="Appliquer", txt_ok="Ok"):
-        return self._rtn(
-            title=title,
-            msg=msg,
-            ico=ico,
-            ico_rgb=ico_rgb,
-            txt_apply=txt_apply,
-            txt_ok=txt_ok
-        )
+    MAIN = partial(__rtn, title="OPTION", msg="", ico=PaImg.INFO, ico_rgb="th3", txt_apply="Appliquer", txt_ok="Ok", width=__WIDTH, height=__HEIGHT, opacity=__OPACITY)

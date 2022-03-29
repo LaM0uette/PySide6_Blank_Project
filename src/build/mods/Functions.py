@@ -5,7 +5,7 @@ import shutil
 
 from PySide6 import QtGui, QtCore
 
-from src.config import config
+from src.config.config import Config
 from src.lib.palettes import *
 
 
@@ -13,26 +13,16 @@ class Functions:
 
     def SET_CURSOR(self, cur):
         return QtGui.QCursor(QtGui.QPixmap(cur[0]), cur[1], cur[2])
-    def SET_DIM(self, *args, width=None, height=None):
-        for wg in args:
-            if width is not None: wg.setFixedWidth(width)
-            if height is not None: wg.setFixedHeight(height)
-    def SET_FONT(self, *args, font=config.font, font_size=None, rtn=False):
-        if not font_size: return
-
-        ft = QtGui.QFont()
-        ft.setFamily(font)
-        ft.setPointSize(font_size)
-
-        if rtn: return ft
-
-        for wg in args:
-            wg.setFont(ft)
-    def SET_ICON(self, wg, img, dim):
+    def SET_ICON(self, ico, rgb):
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(f"{img}.svg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        wg.setIcon(icon)
-        wg.setIconSize(QtCore.QSize(dim, dim))
+        icon.addPixmap(QtGui.QPixmap(f"{ico}{rgb}.svg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        return icon
+    def SET_ICON_DIM(self, width, height):
+        icon_dim = QtCore.QSize(width, height)
+        return icon_dim
+
+
+
     def ADD_QACTION(self, tray, ico=None, ico_rgb=None, txt="", shortcut_txt="", status_tip="", size=None, fct=None, sht_1=None, sht_2=None, sht_3=None):
         if size is None: size=12
 
@@ -51,9 +41,8 @@ class Functions:
         tray.addAction(action)
         QtGui.QShortcut(QtGui.QKeySequence(shortcut), self).activated.connect(fct)
 
-
     def GEN_SVG(self):
-        hx1, hx2, hx3, hxbn1, hxbn2 = Rgb().hx_th1(), Rgb().hx_th2(), Rgb().hx_th3(), Rgb().hx_bn1(), Rgb().hx_bn2()
+        hx1, hx2, hx3, hxbn1, hxbn2 = PaRgb.HX_TH1, PaRgb.HX_TH2, PaRgb.HX_TH3, PaRgb.HX_BN1, PaRgb.HX_BN2
         ls_couleurs = [
             {"rgb_base": "#1D1D1B", "rgb_rep_th1": hx1, "rgb_rep_th2": hx2, "rgb_rep_th3": hx3, "rgb_rep_bn1": hxbn1, "rgb_rep_bn2": hxbn2},
             {"rgb_base": "#3C3C3B", "rgb_rep_th1": hx2, "rgb_rep_th2": hx1, "rgb_rep_th3": hx1, "rgb_rep_bn1": hx2, "rgb_rep_bn2": hx2},
@@ -69,9 +58,9 @@ class Functions:
             "bn2": "rgb_rep_bn2"
         }
 
-        liens_img = os.listdir("src/assets/img/")
+        liens_img = os.listdir("assets/img/")
         for lien_img in liens_img:
-            lien = f"src/assets/img/{lien_img}/"
+            lien = f"assets/img/{lien_img}/"
             lien_rgb = f"{lien}rgb"
 
             if not os.path.exists(lien_rgb):
@@ -104,3 +93,27 @@ class Functions:
         rgb = hex_colors.lstrip('#')
         lv = len(rgb)
         return tuple(int(rgb[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+
+
+
+    # A SUPPR
+    def SET_ICON_A_SUPPR(self, wg, img, dim):
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(f"{img}.svg"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        wg.setIcon(icon)
+        wg.setIconSize(QtCore.QSize(dim, dim))
+    def SET_DIM(self, *args, width=None, height=None):
+        for wg in args:
+            if width is not None: wg.setFixedWidth(width)
+            if height is not None: wg.setFixedHeight(height)
+    def SET_FONT(self, *args, font=Config.font, font_size=None, rtn=False):
+        if not font_size: return
+
+        ft = QtGui.QFont()
+        ft.setFamily(font)
+        ft.setPointSize(font_size)
+
+        if rtn: return ft
+
+        for wg in args:
+            wg.setFont(ft)

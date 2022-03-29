@@ -14,7 +14,7 @@ HEIGHT = None
 #####################
 BORDER_WIDTH = (1,) * 4
 BORDER_STYLE = "solid"
-BORDER_RGB = Rgb().tr()
+BORDER_RGB = PaRgb.TR
 
 
 ###################

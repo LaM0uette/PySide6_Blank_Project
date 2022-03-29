@@ -23,12 +23,12 @@ class ToolBoxUi(toolbox_ui.Ui_ToolBoxUi, QtWidgets.QDialog):
         self.setFixedHeight(self.height)
         self.setWindowOpacity(self.opacity)
 
-        if config.toolbox_pin:
+        if Config.toolbox_pin:
             self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.WindowStaysOnTopHint | QtCore.Qt.Tool)
         else:
             self.setWindowFlags(QtCore.Qt.FramelessWindowHint | QtCore.Qt.Tool)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
-        self.setGraphicsEffect(Shadow().ombre_portee(self))
+        self.setGraphicsEffect(PaShadow.OMBRE_PORTEE(self))
         self.setWindowModality(QtCore.Qt.ApplicationModal)
     def IN_SETUP_UI(self):
         ### Ui ###
@@ -36,18 +36,18 @@ class ToolBoxUi(toolbox_ui.Ui_ToolBoxUi, QtWidgets.QDialog):
         self.vlay_main.setContentsMargins(v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP, v_gb.MARGIN_APP)
     def IN_CLASSE(self):
         ### QFrame ###
-        Frame.ToolBox(self.fr_main)
-        Frame.Menu(self.fr_menu_top).top()
-        Frame.Dlg(self.fr_body).th(rgb=Rgb().th1())
+        MyFrame.ToolBox(self.fr_main)
+        MyFrame.Menu(self.fr_menu_top).top()
+        MyFrame.Dlg(self.fr_body).th(rgb=PaRgb.TH1)
         ### /QFrame ###
 
 
         ### QPushButton ###
-        PushButton.menu_top(self.pb_mt_quitter).quitter()
+        MyPushButton.MenuTop(self.pb_mt_quitter).quitter()
         ### /QPushButton ###
     def IN_WG(self):
         # Base
-        self.setCursor(Functions().SET_CURSOR(cur=Cur().souris()))
+        self.setCursor(Functions().SET_CURSOR(cur=PaCur.SOURIS))
     def IN_CONNECTIONS(self):
         # Menu_top
         self.pb_mt_quitter.clicked.connect(lambda: self.hide())

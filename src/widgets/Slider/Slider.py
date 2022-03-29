@@ -14,7 +14,7 @@ class Base:
         Build(
             *self.wgs,
 
-            bg=Rgb().th1(),
+            bg=PaRgb.TH1,
 
             height_groove=12,
             width_groove=12,
@@ -33,10 +33,10 @@ class Base:
             width=200,
             height=200,
 
-            bg=Rgb().th1(),
-            bg_handle=Rgb().th3(),
-            bg_handle_hover=Rgb().th3(),
-            bg_handle_pressed=Rgb().th3(),
+            bg=PaRgb.TH1,
+            bg_handle=PaRgb.TH3,
+            bg_handle_hover=PaRgb.TH3,
+            bg_handle_pressed=PaRgb.TH3,
 
             height_groove=12,
             width_groove=12,
@@ -49,9 +49,9 @@ class Base:
             margin_handle_v=(0, 0, -3, -3),
 
             border_handle_h=(3,) * 4,
-            border_handle_h_rgb=Rgb().th2(),
+            border_handle_h_rgb=PaRgb.TH2,
             border_handle_v=(3,) * 4,
-            border_handle_v_rgb=Rgb().th2(),
+            border_handle_v_rgb=PaRgb.TH2,
 
             radius_groove_h=(3,) * 4,
             radius_groove_v=(3,) * 4,
@@ -62,11 +62,11 @@ class Base:
         Build(
             *self.wgs,
 
-            height=Dim().h8(),
+            height=PaDim.H8,
 
             value_max=255,
 
-            bg=Rgb().th1(),
+            bg=PaRgb.TH1,
             bg_handle=rgb,
             bg_handle_hover=rgb,
             bg_handle_pressed=rgb,
@@ -89,11 +89,11 @@ class Base:
             margin_handle_v=(0, 0, -5, -5),
 
             border_groove=(1,) * 4,
-            border_groove_rgb=Rgb().th3(),
+            border_groove_rgb=PaRgb.TH3,
             border_handle_h=(2,) * 4,
-            border_handle_h_rgb=Rgb().th3(),
+            border_handle_h_rgb=PaRgb.TH3,
             border_handle_v=(2,) * 4,
-            border_handle_v_rgb=Rgb().th3(),
+            border_handle_v_rgb=PaRgb.TH3,
 
             radius_groove_h=(2,) * 4,
             radius_groove_v=(2,) * 4,
