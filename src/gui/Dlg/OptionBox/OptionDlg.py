@@ -126,7 +126,7 @@ class OptionDlg(option_ui.Ui_Option, QtWidgets.QDialog):
 
 
         ### QTreeWidget ###
-        TreeWidget.Base(self.trw_option).option()
+        MyTreeWidget.Base(self.trw_option).Option()
         ### /QTreeWidget ###
     def IN_WG(self):
         # Base

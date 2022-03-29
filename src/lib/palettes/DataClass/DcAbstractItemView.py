@@ -15,4 +15,4 @@ class Base:
     auto_scroll: bool = True
     auto_scroll_margin: int = 16
     tab_navigation: bool = True
-    alternative_row_colors: bool = True
+    alternative_row_colors: bool = False
